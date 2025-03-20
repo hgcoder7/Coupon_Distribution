@@ -83,7 +83,7 @@ app.post('/admin/login', (req, res) => {
 
         res.cookie("token", token, {
             httpOnly: true,  // Prevents JavaScript access to the token
-            secure: false,   // ❗ Set `true` in production with HTTPS
+            secure: true,   // ❗ Set `true` in production with HTTPS
             sameSite: "Lax"  // Prevents CSRF attacks
         }).json({ message: "Login successful" });
     } else {
