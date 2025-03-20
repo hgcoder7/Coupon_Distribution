@@ -94,8 +94,8 @@ app.post('/admin/login', (req, res) => {
 app.post('/admin/logout', (req, res) => {
     res.clearCookie("token", {
         httpOnly: true,
-        secure: false, // Set `true` in production with HTTPS
-        sameSite: "Lax"
+        secure: true, // Set `true` in production with HTTPS
+        sameSite: "None"
     });
 
     res.json({ message: "Logged out successfully" });
