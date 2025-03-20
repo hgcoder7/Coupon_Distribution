@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const App = () => {
     const [coupon, setCoupon] = useState("");
     const [message, setMessage] = useState("");
     const API_BASE = import.meta.env.VITE_API_BASE;
+    const navigate = useNavigate();
     const claimCoupon = async () => {
         try {
             const res = await axios.get(`${API_BASE}/claim-coupon`, { withCredentials: true });
@@ -27,6 +29,12 @@ const App = () => {
                 </button>
                 {coupon && <h2 className="text-green-500 font-bold text-lg mt-4">Your Coupon: {coupon}</h2>}
                 {message && <p className="text-red-500 mt-2">{message}</p>}
+                <button 
+                    onClick={() => navigate("/admin/signin")}
+                    className="mt-4 px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-800 transition"
+                >
+                    Admin Login
+                </button>
             </div>
         </div>
     );
