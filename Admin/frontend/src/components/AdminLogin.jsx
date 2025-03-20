@@ -43,6 +43,12 @@ const AdminLogin = () => {
                     Login
                 </button>
                 {error && <p className="text-red-500 text-center mt-2">{error}</p>}
+                <button 
+                    onClick={() => navigate("/")} 
+                    className="mt-4 px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-800 transition"
+                >
+                    Back to User Page
+                </button>
             </div>
         </div>
     );
