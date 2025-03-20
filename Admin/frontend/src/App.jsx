@@ -4,7 +4,7 @@ import axios from "axios";
 const App = () => {
     const [coupon, setCoupon] = useState("");
     const [message, setMessage] = useState("");
-    const API_BASE = "http://localhost:2000";
+    const API_BASE = import.meta.env.VITE_API_BASE;
     const claimCoupon = async () => {
         try {
             const res = await axios.get(`${API_BASE}/claim-coupon`, { withCredentials: true });

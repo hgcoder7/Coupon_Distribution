@@ -7,7 +7,7 @@ const AdminLogin = () => {
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const navigate = useNavigate();
-    const API_BASE = "http://localhost:2000";
+    const API_BASE = import.meta.env.VITE_API_BASE;
 
     const handleLogin = async () => {
         try {

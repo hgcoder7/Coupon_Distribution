@@ -7,7 +7,7 @@ const AdminPanel = () => {
     const [claims, setClaims] = useState([]);
     const [newCoupon, setNewCoupon] = useState("");
     const navigate = useNavigate();
-    const API_BASE = "http://localhost:2000";
+    const API_BASE = import.meta.env.VITE_API_BASE;
     useEffect(() => {
         fetchCoupons();
         fetchClaims();
