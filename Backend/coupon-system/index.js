@@ -4,7 +4,7 @@ const mysql = require('mysql2');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
-
+const PORT = process.env.PORT || 5000;
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
@@ -143,4 +143,4 @@ app.patch('/admin/toggle-coupon/:id', verifyAdmin, async (req, res) => {
 });
 
 // **Server Start**
-app.listen(2000, () => console.log('Server running on port 2000'));
+app.listen(PORT, () => console.log( `Server running on port ${PORT}`));
