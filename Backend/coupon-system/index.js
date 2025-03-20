@@ -84,7 +84,7 @@ app.post('/admin/login', (req, res) => {
         res.cookie("token", token, {
             httpOnly: true,  // Prevents JavaScript access to the token
             secure: true,   // ❗ Set `true` in production with HTTPS
-            sameSite: "Lax"  // Prevents CSRF attacks
+            sameSite: "None"  // Prevents CSRF attacks
         }).json({ message: "Login successful" });
     } else {
         res.status(401).json({ message: "Invalid credentials" });
